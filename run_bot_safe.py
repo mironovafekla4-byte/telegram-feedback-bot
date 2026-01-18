@@ -387,6 +387,14 @@ if init_google_sheets():
 else:
     print("! Using local Excel file for storage")
 
+# Запускаем веб-сервер для keep-alive (Replit)
+try:
+    from keep_alive import keep_alive
+    keep_alive()
+    print("✓ Keep-alive server started on port 8080")
+except ImportError:
+    print("! Keep-alive not available (optional)")
+
 try:
     print("Bot info:", bot.get_me())
     print("Starting polling...")
