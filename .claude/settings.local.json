@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(export BOT_TOKEN=\"8481181310:AAGpndTUuT7NtJsJGpNAN3VsqZNYDzQs1PI\":*)",
+      "Bash(export GOOGLE_SHEET_ID=\"1fwB_P5s3hFddejrcmheG6C6dPE8TG7N3iQx5D6fPUzI\")",
+      "Bash(export PYTHONIOENCODING=utf-8)",
+      "Bash(python run_bot_safe.py:*)",
+      "Bash(python:*)",
+      "Bash(export GOOGLE_SHEET_ID:*)",
+      "Bash(git init:*)",
+      "Bash(git config:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: Telegram feedback bot with Google Sheets integration\n\n- Bot collects user feedback via Telegram\n- Saves data to Google Sheets\n- Supports multiple categories\n- Secure configuration via environment variables\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
+    ]
+  }
+}
