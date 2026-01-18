@@ -74,16 +74,24 @@ def init_google_sheets():
     if not GOOGLE_SHEETS_AVAILABLE:
         print("Warning: gspread library not installed")
         return False
-    
+
     if GOOGLE_SHEET_ID == "УКАЖИТЕ_ID_ТАБЛИЦЫ_ЗДЕСЬ" or not GOOGLE_SHEET_ID:
         print("Google Sheets ID not configured, using local Excel only")
         return False
-    
+
     try:
-        if os.path.exists(SERVICE_ACCOUNT_FILE):
-            # Используем сервисный аккаунт для авторизации
+        # Способ 1: Credentials из переменной окружения (для Render, Heroku и др.)
+        google_creds = os.getenv('GOOGLE_CREDENTIALS')
+        if google_creds:
+            import json
+            creds_dict = json.loads(google_creds)
+            gc = gspread.service_account_from_dict(creds_dict)
+            sh = gc.open_by_key(GOOGLE_SHEET_ID)
+            print(f"Successfully connected to Google Sheets (from env): {sh.title}")
+            return True
+        # Способ 2: Credentials из файла (для локальной разработки)
+        elif os.path.exists(SERVICE_ACCOUNT_FILE):
             gc = gspread.service_account(filename=SERVICE_ACCOUNT_FILE)
-            # Проверяем доступ к таблице
             sh = gc.open_by_key(GOOGLE_SHEET_ID)
             print(f"Successfully connected to Google Sheets: {sh.title}")
             return True

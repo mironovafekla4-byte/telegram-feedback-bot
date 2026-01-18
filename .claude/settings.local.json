@@ -10,7 +10,12 @@
       "Bash(git init:*)",
       "Bash(git config:*)",
       "Bash(git add:*)",
-      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: Telegram feedback bot with Google Sheets integration\n\n- Bot collects user feedback via Telegram\n- Saves data to Google Sheets\n- Supports multiple categories\n- Secure configuration via environment variables\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: Telegram feedback bot with Google Sheets integration\n\n- Bot collects user feedback via Telegram\n- Saves data to Google Sheets\n- Supports multiple categories\n- Secure configuration via environment variables\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(winget install:*)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" auth login --web --git-protocol https)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" repo create telegram-feedback-bot --public --source=. --remote=origin --push --description \"Telegram bot for collecting anonymous feedback with Google Sheets integration\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd Render.com deployment support\n\n- Support GOOGLE_CREDENTIALS env variable for cloud deployment\n- Add render.yaml configuration\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push)"
     ]
   }
 }
